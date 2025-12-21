@@ -18,7 +18,6 @@ import image14 from "../assets/Barskiy/IMG_1457.jpg";
 export const galleryDataForBarskiy = [
   image8,
   image7,
-
   image9,
   image10,
   image11,

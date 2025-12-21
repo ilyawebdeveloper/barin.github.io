@@ -43,7 +43,7 @@ const Header = () => {
       {!IS_MOBILE && (
         <div className="header-wrapper_nav">
           <Navigation onScroll={onScroll} />
-          <a href="tel:+79292758250">+7 929 275 82-50</a>
+          <a href="tel:8(3412)576175">+7 341 257 61-75</a>
         </div>
       )}
       {IS_MOBILE && (

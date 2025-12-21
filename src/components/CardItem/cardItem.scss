@@ -27,10 +27,22 @@ $layout-breakpoint-small: 460px;
   font-weight: 400;
   padding: 0px 0px 15px 20px;
 }
+.card-tarif-holiday {
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.8;
+  padding: 0px 0px 10px 20px;
+}
+.card-tarif-holiday-chan {
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.6;
+  padding: 0px 0px 5px 20px;
+}
 .card-description {
   font-size: 16px;
   font-weight: 400;
-  padding: 0px 0px 15px 20px;
+  padding: 20px 15px 15px 20px;
 }
 .card-button {
   font-size: 24px;
@@ -69,10 +81,23 @@ $layout-breakpoint-small: 460px;
     text-align: center;
   }
 
+  .card-tarif-holiday {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.6;
+    padding: 0px 0px 10px 20px;
+  }
+  .card-tarif-holiday-chan {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.8;
+    padding: 0px 0px 5px 20px;
+  }
+
   .card-description {
     font-size: 14px;
     font-weight: 400;
-    padding: 0px 0px 15px 20px;
+    padding: 10px 0px 15px 20px;
   }
 
   .card-title {

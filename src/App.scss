@@ -1,3 +1,4 @@
+$layout-breakpoint-small: 460px;
 #root {
   margin: 0 auto;
   overflow-x: hidden;
@@ -5,4 +6,29 @@
 
 * {
   outline: none !important;
+}
+
+.wrapper-app {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+.main-info {
+  margin-top: 40px;
+  font-size: 16px;
+  color: white;
+}
+@media (max-width: $layout-breakpoint-small) {
+  .wrapper-app {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .main-info {
+    font-size: 14px;
+    color: white;
+    padding: 0px 15px 0px 15px;
+  }
 }

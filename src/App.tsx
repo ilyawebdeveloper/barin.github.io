@@ -20,14 +20,7 @@ function App() {
         id="services"
       />
       <Container>
-        <div
-          style={{
-            display: "flex",
-            gap: "40px",
-            flexWrap: "wrap",
-            justifyContent: "center",
-          }}
-        >
+        <div className="wrapper-app">
           {cards.map((cardItem: PropsCardItem, index) => (
             <CardItem
               key={index}
@@ -37,8 +30,17 @@ function App() {
               price={cardItem.price}
               description={cardItem.description}
               variant={cardItem.variant}
+              priceHoliday={cardItem.priceHoliday}
+              tarifHoliday={cardItem.tarifHoliday}
             />
           ))}
+        </div>
+      </Container>
+      <Container>
+        <div className="main-info">
+          * Для всех номеров:<br /> Минимальное время посещения: 2 часа<br />  Минимальное
+          время чана: от 4 часов и берётся на всё время посещения.<br />  Праздничные
+          дни: с 15 декабря по 10 января<br /> Новогодняя ночь: от 8 часов
         </div>
       </Container>
 

@@ -8,6 +8,7 @@ import ArrowRight from "../Arrow/ArrowRight";
 import { IS_MOBILE } from "../../constants/mobileConstant";
 import ArrowLeft from "../Arrow/ArrowLeft";
 import { List } from "../List/List";
+import { galleryDataForBaronNew } from "../../data/galleryForBaronNew";
 
 export interface PropsCardItem {
   title: string;
@@ -16,6 +17,8 @@ export interface PropsCardItem {
   price: string;
   description: string;
   variant: string;
+  priceHoliday: string;
+  tarifHoliday: string;
 }
 
 const CardItem = ({
@@ -25,6 +28,8 @@ const CardItem = ({
   price,
   description,
   variant,
+  priceHoliday,
+  tarifHoliday,
 }: PropsCardItem) => {
   const settings = {
     // dots: true,
@@ -34,8 +39,16 @@ const CardItem = ({
     slidesToShow: 1,
     lazyLoad: true,
     slidesToScroll: 1,
-    nextArrow: IS_MOBILE ? <ArrowRight width={10} height={10} /> : <ArrowRight width={20} height={20} />,
-    prevArrow: IS_MOBILE ? <ArrowLeft width={10} height={10} /> : <ArrowLeft width={20} height={20} />,
+    nextArrow: IS_MOBILE ? (
+      <ArrowRight width={10} height={10} />
+    ) : (
+      <ArrowRight width={20} height={20} />
+    ),
+    prevArrow: IS_MOBILE ? (
+      <ArrowLeft width={10} height={10} />
+    ) : (
+      <ArrowLeft width={20} height={20} />
+    ),
   };
 
   const gallery = () => {
@@ -51,6 +64,10 @@ const CardItem = ({
       return galleryDataForBarskiy;
     }
 
+    if (variant === "baronNew") {
+      return galleryDataForBaronNew;
+    }
+
     return galleryDataForBaron;
   };
 
@@ -60,8 +77,13 @@ const CardItem = ({
       <div className="card-slider">
         <Slider {...settings}>
           {gallery().map((itemImg) => (
-            <div style={{ outline: 'none' }}>
-              <img src={itemImg} alt="" className="gallery-img" />
+            <div style={{ outline: "none" }}>
+              <img
+                src={itemImg}
+                alt=""
+                className="gallery-img"
+                style={{ maxHeight: "266px" }}
+              />
             </div>
           ))}
         </Slider>
@@ -83,6 +105,14 @@ const CardItem = ({
       </div>
       <div className="card-tarif">Тариф: {tarif}</div>
       <div className="card-tarif">{price}</div>
+      {priceHoliday.length > 0 && (
+        <>
+          <div className="card-tarif-holiday">Тариф в праздничные дни:</div>
+          <div className="card-tarif-holiday-chan">{priceHoliday}</div>
+          <div className="card-tarif-holiday-chan">{tarifHoliday}</div>
+        </>
+      )}
+
       <h3 className="card-description">{description}</h3>
 
       <div className="card-button-wrapeer">
